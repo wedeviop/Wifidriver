@@ -1,0 +1,25 @@
+
+
+Hi friend... I have solved the issue. First to solves the touchpad problem I need to upgrade my kernel to 4.13.4, I have make it using the "sudo ukuu --install v4.13.4", next reboot the touchpad works... After that i saw that my wireless doesn't works well, so I do that:
+
+ 
+
+1 - check if your wireless adapter is that one: "Realtek Semiconductor Co., Ltd. RTL8821AE 802.11ac PCIe Wireless Network Adapter", use this command: lspci | grep Wireless
+
+2 - sudo apt-get install linux-headers-generic build-essential git
+
+3 - git clone http://github.com/lwfinger/rtlwifi_new.git
+
+4 - cd rtlwifi_new
+
+5 - make
+
+6 - sudo make install
+
+7 - sudo modprobe rtl8821ae
+
+8 - reboot your system
+
+9 - Enjoy =D
+
+ 
